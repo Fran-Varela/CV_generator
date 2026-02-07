@@ -2,7 +2,6 @@
 include("config.php");
 
 $id = $_GET['id'];
-
 $sql = "SELECT * FROM cvs WHERE id = $id";
 $resultado = mysqli_query($conn, $sql);
 $cv = mysqli_fetch_assoc($resultado);
@@ -13,45 +12,63 @@ $cv = mysqli_fetch_assoc($resultado);
 <head>
     <meta charset="UTF-8">
     <title>Editar CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1>Editar CV</h1>
+<div class="container mt-4">
 
-<form action="guardar.php" method="POST">
+    <h1 class="mb-4">Editar CV (Nueva versión)</h1>
 
-    <input type="hidden" name="editar" value="1">
+    <form action="guardar.php" method="POST">
 
-    <label>Nombre:</label><br>
-    <input type="text" name="nombre" value="<?php echo $cv['nombre']; ?>"><br><br>
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="<?php echo $cv['nombre']; ?>">
+        </div>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" value="<?php echo $cv['email']; ?>"><br><br>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="<?php echo $cv['email']; ?>">
+        </div>
 
-    <label>Teléfono:</label><br>
-    <input type="text" name="telefono" value="<?php echo $cv['telefono']; ?>"><br><br>
+        <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input type="text" name="telefono" class="form-control" value="<?php echo $cv['telefono']; ?>">
+        </div>
 
-    <label>Perfil:</label><br>
-    <textarea name="perfil"><?php echo $cv['perfil']; ?></textarea><br><br>
+        <div class="mb-3">
+            <label class="form-label">Perfil</label>
+            <textarea name="perfil" class="form-control"><?php echo $cv['perfil']; ?></textarea>
+        </div>
 
-    <label>Experiencia:</label><br>
-    <textarea name="experiencia"><?php echo $cv['experiencia']; ?></textarea><br><br>
+        <div class="mb-3">
+            <label class="form-label">Experiencia</label>
+            <textarea name="experiencia" class="form-control"><?php echo $cv['experiencia']; ?></textarea>
+        </div>
 
-    <label>Formación:</label><br>
-    <textarea name="formacion"><?php echo $cv['formacion']; ?></textarea><br><br>
+        <div class="mb-3">
+            <label class="form-label">Formación</label>
+            <textarea name="formacion" class="form-control"><?php echo $cv['formacion']; ?></textarea>
+        </div>
 
-    <label>Habilidades:</label><br>
-    <textarea name="habilidades"><?php echo $cv['habilidades']; ?></textarea><br><br>
+        <div class="mb-3">
+            <label class="form-label">Habilidades</label>
+            <textarea name="habilidades" class="form-control"><?php echo $cv['habilidades']; ?></textarea>
+        </div>
 
-    <label>Idiomas:</label><br>
-    <textarea name="idiomas"><?php echo $cv['idiomas']; ?></textarea><br><br>
+        <div class="mb-3">
+            <label class="form-label">Idiomas</label>
+            <textarea name="idiomas" class="form-control"><?php echo $cv['idiomas']; ?></textarea>
+        </div>
 
-    <button type="submit">Guardar nueva versión</button>
+        <button type="submit" class="btn btn-success">Guardar nueva versión</button>
+        <a href="listar.php" class="btn btn-secondary">Cancelar</a>
 
-</form>
+    </form>
 
-<br>
-<a href="listar.php">⬅ Cancelar</a>
+</div>
 
 </body>
 </html>

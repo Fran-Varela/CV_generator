@@ -1,0 +1,66 @@
+
+body {
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    color: #212529;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.cv-header {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.cv-section {
+    margin-bottom: 20px;
+}
+
+.cv-section h5 {
+    border-left: 4px solid #0d6efd;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+table {
+    background: white;
+}
+
+.btn {
+    margin-right: 4px;
+}
+
+/*Impresión*/
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    a,
+    button {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .card {
+        border: none;
+    }
+}
