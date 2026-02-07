@@ -35,8 +35,13 @@ $resultado = mysqli_query($conn, $sql);
                 <td><?php echo $fila['fecha_creacion']; ?></td>
                 <td>
                     <a href="ver.php?id=<?php echo $fila['id']; ?>">Ver</a> |
-                    <a href="editar.php?id=<?php echo $fila['id']; ?>">Editar</a>
+                    <a href="editar.php?id=<?php echo $fila['id']; ?>">Editar</a> |
+                    <a href="eliminar.php?id=<?php echo $fila['id']; ?>"
+                        onclick="return confirm('¿Seguro que quieres eliminar este CV?');">
+                        Eliminar
+                    </a>
                 </td>
+
 
             </tr>
         <?php } ?>
